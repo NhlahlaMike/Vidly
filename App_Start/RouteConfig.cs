@@ -12,11 +12,11 @@ namespace Vidly
 		public static void RegisterRoutes(RouteCollection routes)
 		{
 			routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
-			routes.MapRoute(
+			/*routes.MapRoute(
 				"Customers",
 				"Customers", //Or put {controller} without parameters
 				new { controller = "Customers", action = "Customers", id = UrlParameter.Optional }
-				);
+				);*/
 			routes.MapRoute(
 				name: "Default",
 				url: "{controller}/{action}/{id}",

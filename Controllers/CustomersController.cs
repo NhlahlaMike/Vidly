@@ -9,15 +9,27 @@ namespace Vidly.Controllers
 {
 	public class CustomersController : Controller
 	{
+		private ApplicationDbContext _context;
+
+		public CustomersController()
+		{
+			_context = new ApplicationDbContext();
+		}
+
+		protected override void Dispose(bool disposing)
+		{
+			_context.Dispose();	
+		}
 		// GET: Customers
 		public ActionResult Customers()
 		{
-			var customer = GetCustomers();
+			var customers = GetCustomers();
+			//var customers = _context.Customers.ToList();
 
-			if (customer == null)
+			if (customers == null)
 				return HttpNotFound();
 
-			return View(customer);
+			return View(customers);
 		}
 
 		public IEnumerable<Customer> GetCustomers()
@@ -31,8 +43,10 @@ namespace Vidly.Controllers
 
 		public ActionResult Details(int id)
 		{
-			var customerInfo = GetCustomers().Where(p => p.Id == id);
-			
+			//works with IEnumerable in the View
+			//var customerInfo = GetCustomers().Where(p => p.Id == id);
+			var customerInfo = GetCustomers().SingleOrDefault(p => p.Id == id);
+			//var customerInfo = _context.Customers.SingleOrDefault(c => c.Id == id);
 			/*foreach (Customer oneCustomer in GetCustomers().Where(p => p.Id == id))
 			{
 				customerDetails = oneCustomer.Name;

@@ -63,6 +63,9 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.SqlClient, Version=4.6.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Data.SqlClient.4.7.0\lib\net461\System.Data.SqlClient.dll</HintPath>
+    </Reference>
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -152,6 +155,14 @@
     <Compile Include="Migrations\201910211309247_AddMembershipType.cs" />
     <Compile Include="Migrations\201910211309247_AddMembershipType.designer.cs">
       <DependentUpon>201910211309247_AddMembershipType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910211323450_PopulateMembershipTypes.cs" />
+    <Compile Include="Migrations\201910211323450_PopulateMembershipTypes.designer.cs">
+      <DependentUpon>201910211323450_PopulateMembershipTypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910211409264_ApplyAnnotationsToCustomerName.cs" />
+    <Compile Include="Migrations\201910211409264_ApplyAnnotationsToCustomerName.designer.cs">
+      <DependentUpon>201910211409264_ApplyAnnotationsToCustomerName.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -264,6 +275,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201910211309247_AddMembershipType.resx">
       <DependentUpon>201910211309247_AddMembershipType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910211323450_PopulateMembershipTypes.resx">
+      <DependentUpon>201910211323450_PopulateMembershipTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910211409264_ApplyAnnotationsToCustomerName.resx">
+      <DependentUpon>201910211409264_ApplyAnnotationsToCustomerName.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
